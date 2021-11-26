@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#11cfc5"
+    tools:context=".admin.Hospital.UpdateHospital">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/seguisb"
+        android:text="Update Hospital"
+        android:textColor="#fff"
+        android:textSize="60px"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.108"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.04"
+        tools:ignore="HardcodedText,MissingConstraints,PxUsage,SpUsage" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/seguisb"
+        android:text="Click to Update the Hospital"
+        android:textColor="#fff"
+        android:textSize="30px"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintVertical_bias="0.018"
+        tools:ignore="HardcodedText,MissingConstraints,PxUsage" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:layout_marginTop="300px"
+        android:background="@drawable/card_background"
+        android:elevation="36dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="MissingConstraints,PxUsage,UnusedAttribute">
+
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="39dp"
+            android:adjustViewBounds="false"
+            android:onClick="openUpdateHospital"
+            android:src="@drawable/ic_back_blue"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="ContentDescription,OnClick,RtlHardcoded,UsingOnClickInXml" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp"
+
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginBottom="0dp"
+            tools:ignore="ObsoleteLayoutParam,RtlHardcoded,ScrollViewSize">
+
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/animationView"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.495"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.895"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/data"
+                tools:ignore="MissingConstraints" />
+
+            <EditText
+                android:id="@+id/txtNombreCompleto"
+                android:layout_width="353dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/textView"
+                android:background="@drawable/edit_text_background"
+                android:drawableStart="@drawable/ic_baseline_local_hospital_24"
+                android:drawablePadding="8dp"
+                android:ems="10"
+                android:fontFamily="@font/seguisb"
+                android:hint="Hospital Name"
+                android:paddingLeft="15dp"
+                android:textColor="#283241"
+                android:textColorHint="#495057"
+                android:textSize="17dp"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.083"
+                tools:ignore="Autofill,HardcodedText,LabelFor,RtlCompat,RtlHardcoded,RtlSymmetry,SpUsage,TextFields,UnknownIdInLayout" />
+
+            <EditText
+                android:id="@+id/txtTelefono"
+                android:layout_width="353dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/textView"
+                android:background="@drawable/edit_text_background"
+                android:drawableStart="@drawable/ic_baseline_phone_24"
+                android:drawablePadding="8dp"
+                android:ems="10"
+                android:fontFamily="@font/seguisb"
+                android:hint="Number Phone"
+                android:inputType="phone"
+                android:paddingLeft="15dp"
+                android:textColor="#283241"
+                android:textColorHint="#495057"
+                android:textSize="17dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.178"
+                tools:ignore="Autofill,HardcodedText,LabelFor,RtlCompat,RtlHardcoded,RtlSymmetry,SpUsage,TextFields,UnknownIdInLayout" />
+
+            <EditText
+                android:id="@+id/txtTelefono2"
+                android:layout_width="353dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/textView"
+                android:background="@drawable/edit_text_background"
+                android:drawableStart="@drawable/ic_baseline_address"
+                android:drawablePadding="8dp"
+                android:ems="10"
+                android:fontFamily="@font/seguisb"
+                android:hint="Address"
+                android:paddingLeft="15dp"
+                android:textColor="#283241"
+                android:textColorHint="#495057"
+                android:textSize="17dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.273"
+                tools:ignore="Autofill,HardcodedText,LabelFor,RtlCompat,RtlHardcoded,RtlSymmetry,SpUsage,TextFields,UnknownIdInLayout" />
+
+            <Button
+                android:id="@+id/btnGuardarContacto3"
+                android:layout_width="151dp"
+                android:layout_height="39dp"
+                android:layout_below="@+id/listaConversion"
+                android:background="@drawable/button"
+                android:text="Delete"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="40px"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.823"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.382"
+                tools:ignore="HardcodedText" />
+
+            <Button
+                android:id="@+id/btnGuardarContacto"
+                android:layout_width="151dp"
+                android:layout_height="39dp"
+                android:layout_below="@+id/listaConversion"
+                android:background="@drawable/button"
+                android:text="Update"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="40px"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.196"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.382"
+                tools:ignore="HardcodedText,UnknownIdInLayout" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

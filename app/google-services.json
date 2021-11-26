@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "438276066048",
+    "project_id": "hospital-reservations",
+    "storage_bucket": "hospital-reservations.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:438276066048:android:ec375b3f3ba435789f81e5",
+        "android_client_info": {
+          "package_name": "com.amtodev.hospitalReservations"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "438276066048-ab59457c6cr2svqs3kh9dg3u6va97n3r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5HulXt2KNgVrpKdcM3HU6bkpiF9GVWlo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "438276066048-ab59457c6cr2svqs3kh9dg3u6va97n3r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
