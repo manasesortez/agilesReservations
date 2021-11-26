@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#11cfc5"
+    android:background="#C2EDEB"
     tools:context=".admin.Specialty.ViewSpecialty">
 
     <ListView
@@ -111,7 +111,7 @@
                 android:layout_height="46dp"
                 android:layout_below="@+id/listaConversion"
                 android:background="@drawable/button"
-                android:text="Exportar"
+                android:text="Export"
                 android:textAlignment="center"
                 android:textAllCaps="false"
                 android:textColor="#fff"
@@ -130,7 +130,7 @@
                 android:layout_height="46dp"
                 android:layout_below="@+id/listaConversion"
                 android:background="@drawable/button"
-                android:text="Buscar"
+                android:text="Search"
                 android:textAlignment="center"
                 android:textAllCaps="false"
                 android:textColor="#fff"

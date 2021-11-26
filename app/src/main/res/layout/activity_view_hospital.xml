@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#11cfc5"
+    android:background="#C2EDEB"
     tools:context=".admin.Hospital.ViewHospital">
 
     <ListView
@@ -15,6 +15,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
+        tools:listitem="@layout/item_recyclerview"
         app:layout_constraintTop_toTopOf="parent" />
 
     <RelativeLayout
@@ -84,7 +85,7 @@
 
 
             <EditText
-                android:id="@+id/txtCriterio"
+                android:id="@+id/txtCriterioHospital"
                 android:layout_width="353dp"
                 android:layout_height="43dp"
                 android:layout_below="@+id/textView"
@@ -106,15 +107,16 @@
                 tools:ignore="Autofill,HardcodedText,LabelFor,RtlCompat,RtlHardcoded,RtlSymmetry,SpUsage,UnknownIdInLayout" />
 
             <Button
-                android:id="@+id/btnExportar"
+                android:id="@+id/btnExportHospital"
                 android:layout_width="179dp"
                 android:layout_height="46dp"
                 android:layout_below="@+id/listaConversion"
                 android:background="@drawable/button"
-                android:text="Exportar"
+                android:text="Export"
                 android:textAlignment="center"
                 android:textAllCaps="false"
                 android:textColor="#fff"
+                android:clickable="true"
                 android:textSize="40px"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -125,12 +127,12 @@
                 tools:ignore="HardcodedText,UnknownId,UnknownIdInLayout" />
 
             <Button
-                android:id="@+id/btnBuscar"
+                android:id="@+id/btSearchHospital"
                 android:layout_width="179dp"
                 android:layout_height="46dp"
                 android:layout_below="@+id/listaConversion"
                 android:background="@drawable/button"
-                android:text="Buscar"
+                android:text="Search"
                 android:textAlignment="center"
                 android:textAllCaps="false"
                 android:textColor="#fff"

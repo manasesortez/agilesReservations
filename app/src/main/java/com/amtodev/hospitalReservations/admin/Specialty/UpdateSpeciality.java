@@ -18,7 +18,7 @@ public class UpdateSpeciality extends AppCompatActivity {
     }
 
     public void openUpdateSpeciality(View view) {
-        startActivity(new Intent(this, Admin.class));
+        startActivity(new Intent(this, ViewSpecialty.class));
         overridePendingTransition(R.anim.slide_in_left,android.R.anim.slide_out_right);
         finish();
     }

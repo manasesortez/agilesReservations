@@ -29,8 +29,8 @@ public class ConexionSQLite extends SQLiteOpenHelper {
             "doctor_direccion TEXT, " +
             "doctor_costo_consulta TEXT," +
             "doctor_dias_habiles TEXT," +
-            "doctor_hora_entrada TIME," +
-            "doctor_hora_salida TIME," +
+            "doctor_hora_entrada TEXT," +
+            "doctor_hora_salida TEXT," +
             "hospital_id INTEGER NOT NULL," +
             "especialidad_id INTEGER NOT NULL," +
             "FOREIGN KEY (especialidad_id) REFERENCES especialidades(especialidad_id)," +
@@ -38,7 +38,7 @@ public class ConexionSQLite extends SQLiteOpenHelper {
 
     final String TABLE_RESERVAS = "CREATE TABLE reservas(" +
             "reserva_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL," +
-            "reserva_hora_consulta DATETIME, " +
+            "reserva_hora_consulta TEXT, " +
             "reserva_nombre_paciente TEXT, " +
             "reserva_estado_paciente TEXT, " +
             "hospital_id INTEGER NOT NULL," +

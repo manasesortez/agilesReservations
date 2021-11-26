@@ -130,7 +130,7 @@
                 android:layout_height="46dp"
                 android:layout_below="@+id/listaConversion"
                 android:background="@drawable/button"
-                android:text="Guardar"
+                android:text="Save"
                 android:textAlignment="center"
                 android:textAllCaps="false"
                 android:textColor="#fff"

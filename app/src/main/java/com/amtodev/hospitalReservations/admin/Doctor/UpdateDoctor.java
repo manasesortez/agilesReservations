@@ -11,6 +11,7 @@ import com.amtodev.hospitalReservations.admin.Admin;
 
 public class UpdateDoctor extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,7 +19,7 @@ public class UpdateDoctor extends AppCompatActivity {
     }
 
     public void openUpdateDoctor(View view) {
-        startActivity(new Intent(this, Admin.class));
+        startActivity(new Intent(this, ViewDoctor.class));
         overridePendingTransition(R.anim.slide_in_left,android.R.anim.slide_out_right);
         finish();
     }

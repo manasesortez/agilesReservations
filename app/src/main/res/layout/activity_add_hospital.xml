@@ -103,7 +103,7 @@
                 tools:ignore="MissingConstraints" />
 
             <EditText
-                android:id="@+id/txtNombreCompleto"
+                android:id="@+id/txtHospitalName"
                 android:layout_width="353dp"
                 android:layout_height="40dp"
                 android:layout_below="@+id/textView"
@@ -126,7 +126,7 @@
                 tools:ignore="Autofill,HardcodedText,LabelFor,RtlCompat,RtlHardcoded,RtlSymmetry,SpUsage,TextFields,UnknownIdInLayout" />
 
             <EditText
-                android:id="@+id/txtTelefono"
+                android:id="@+id/txtNumberPhone"
                 android:layout_width="353dp"
                 android:layout_height="40dp"
                 android:layout_below="@+id/textView"
@@ -149,7 +149,7 @@
                 tools:ignore="Autofill,HardcodedText,LabelFor,RtlCompat,RtlHardcoded,RtlSymmetry,SpUsage,TextFields,UnknownIdInLayout" />
 
             <EditText
-                android:id="@+id/txtTelefono2"
+                android:id="@+id/txtAddress"
                 android:layout_width="353dp"
                 android:layout_height="40dp"
                 android:layout_below="@+id/textView"
@@ -171,11 +171,11 @@
                 tools:ignore="Autofill,HardcodedText,LabelFor,RtlCompat,RtlHardcoded,RtlSymmetry,SpUsage,TextFields,UnknownIdInLayout" />
 
             <Button
-                android:id="@+id/btnGuardarContacto"
+                android:id="@+id/btnSaveHospital"
                 android:layout_width="179dp"
                 android:layout_height="46dp"
                 android:background="@drawable/button"
-                android:text="Guardar"
+                android:text="Save"
                 android:textAlignment="center"
                 android:textAllCaps="false"
                 android:textColor="#fff"
