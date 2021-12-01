@@ -35,6 +35,7 @@ import com.amtodev.hospitalReservations.Class.ConexionSQLite;
 import com.amtodev.hospitalReservations.Class.Configurations;
 import com.amtodev.hospitalReservations.R;
 import com.amtodev.hospitalReservations.admin.Admin;
+import com.amtodev.hospitalReservations.admin.Doctor.AdminDoctor;
 import com.itextpdf.io.image.ImageData;
 import com.itextpdf.io.image.ImageDataFactory;
 import com.itextpdf.io.source.ByteArrayOutputStream;
@@ -136,7 +137,7 @@ public class ViewHospital extends AppCompatActivity {
 
 
     public void openAdminViewHospital(View view) {
-        startActivity(new Intent(this, Admin.class));
+        startActivity(new Intent(this, AdminHospital.class));
         overridePendingTransition(R.anim.slide_in_left,android.R.anim.slide_out_right);
         finish();
     }
@@ -153,6 +154,7 @@ public class ViewHospital extends AppCompatActivity {
                 arregloID.add(cadaRegistro.getInt(0));
             }while(cadaRegistro.moveToNext());
         }
+
         base.close();
         return miLista;
     }
@@ -172,7 +174,7 @@ public class ViewHospital extends AppCompatActivity {
         if (!carpeta.exists()){
             carpeta.mkdir();
         }else{
-            Log.i("Contact", "Carpeta Existente");
+            Log.i("Hospital", "Carpeta Existente");
         }
         tienePermisoAlmacenamiento = true;
     }
@@ -216,12 +218,14 @@ public class ViewHospital extends AppCompatActivity {
             Toast.makeText(contexto, "Error: "+error.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
+
+
     @RequiresApi(api = Build.VERSION_CODES.O)
     public void exportarPDF() throws FileNotFoundException {
         try {
 
             DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyyMMddHHmmss");
-            String nombreArchivo = "Agile"+dtf.format(LocalDateTime.now())+".pdf";
+            String nombreArchivo = "Hospital"+dtf.format(LocalDateTime.now())+".pdf";
             File archivo = new File(DIRECTORIO_PDFS, nombreArchivo);
 
             PdfWriter pdfEscrito = new PdfWriter(archivo);

@@ -8,7 +8,7 @@
     tools:context=".admin.Specialty.ViewSpecialty">
 
     <ListView
-        android:id="@+id/lvContactos"
+        android:id="@+id/lvSpecialty"
         android:layout_width="411dp"
         android:layout_height="558dp"
         android:layout_marginTop="300dp"
@@ -26,7 +26,7 @@
         android:layout_weight="3"
         android:background="@drawable/card_background_inside"
         android:elevation="36dp"
-        app:layout_constraintBottom_toTopOf="@+id/lvContactos"
+        app:layout_constraintBottom_toTopOf="@+id/lvSpecialty"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -84,7 +84,7 @@
 
 
             <EditText
-                android:id="@+id/txtCriterio"
+                android:id="@+id/txtCriterioSpecialty"
                 android:layout_width="353dp"
                 android:layout_height="43dp"
                 android:layout_below="@+id/textView"
@@ -106,7 +106,7 @@
                 tools:ignore="Autofill,HardcodedText,LabelFor,RtlCompat,RtlHardcoded,RtlSymmetry,SpUsage,UnknownIdInLayout" />
 
             <Button
-                android:id="@+id/btnExportar"
+                android:id="@+id/btnExportSpecialty"
                 android:layout_width="179dp"
                 android:layout_height="46dp"
                 android:layout_below="@+id/listaConversion"
@@ -125,7 +125,7 @@
                 tools:ignore="HardcodedText,UnknownId,UnknownIdInLayout" />
 
             <Button
-                android:id="@+id/btnBuscar"
+                android:id="@+id/btnSearchSpecialty"
                 android:layout_width="179dp"
                 android:layout_height="46dp"
                 android:layout_below="@+id/listaConversion"

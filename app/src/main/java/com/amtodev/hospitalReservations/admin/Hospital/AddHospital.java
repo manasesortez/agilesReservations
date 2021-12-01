@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.amtodev.hospitalReservations.Class.ConexionSQLite;
 import com.amtodev.hospitalReservations.R;
 import com.amtodev.hospitalReservations.admin.Admin;
+import com.amtodev.hospitalReservations.admin.Doctor.AdminDoctor;
 
 public class AddHospital extends AppCompatActivity {
 
@@ -20,11 +21,13 @@ public class AddHospital extends AppCompatActivity {
     final String NOMBRE_BASE_DE_DATOS = "agilesReservas";
     EditText HospitalName, NumberPhone, Address;
     Button SaveHospital;
+    SQLiteDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_hospital);
+
         objConexion = new ConexionSQLite(AddHospital.this, NOMBRE_BASE_DE_DATOS, null, 1);
 
         HospitalName = (EditText) findViewById(R.id.txtHospitalName);
@@ -57,7 +60,7 @@ public class AddHospital extends AppCompatActivity {
     }
 
     public void openAdminHospital(View view) {
-        startActivity(new Intent(this, Admin.class));
+        startActivity(new Intent(this, AdminHospital.class));
         overridePendingTransition(R.anim.slide_in_left,android.R.anim.slide_out_right);
         finish();
     }

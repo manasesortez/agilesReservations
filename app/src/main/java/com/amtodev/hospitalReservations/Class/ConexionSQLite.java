@@ -1,8 +1,7 @@
 package com.amtodev.hospitalReservations.Class;
 
-import android.annotation.SuppressLint;
+
 import android.content.Context;
-import android.database.DatabaseErrorHandler;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -12,19 +11,19 @@ import androidx.annotation.Nullable;
 public class ConexionSQLite extends SQLiteOpenHelper {
 
     final String TABLE_HOSPITAL = "CREATE TABLE hospitales (" +
-            "hospital_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL," +
+            "hospital_id INTEGER PRIMARY KEY  AUTOINCREMENT  UNIQUE NOT NULL," +
             "hospital_nombre TEXT," +
             "hospital_telefono TEXT," +
             "hospital_direccion TEXT)";
 
     final String TABLE_ESPECIALIDAD = "CREATE TABLE especialidades(" +
-            "especialidad_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL," +
+            "especialidad_id INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE NOT NULL," +
             "especialidad_nombre TEXT, " +
             "hospital_id INTEGER NOT NULL," +
             "FOREIGN KEY (hospital_id) REFERENCES hospitales(hospital_id) ON UPDATE CASCADE ON DELETE CASCADE)";
 
     final String TABLE_DOCTOR= "CREATE TABLE doctores(" +
-            "doctor_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL," +
+            "doctor_id INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE NOT NULL," +
             "doctor_name TEXT, " +
             "doctor_direccion TEXT, " +
             "doctor_costo_consulta TEXT," +
@@ -65,6 +64,8 @@ public class ConexionSQLite extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS hospitales");
         db.execSQL("DROP TABLE IF EXISTS especialidades");
         db.execSQL("DROP TABLE IF EXISTS doctores");
+        db.execSQL("DROP TABLE IF EXISTS reservas");
+
         onCreate(db);
     }
 }

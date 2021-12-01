@@ -34,7 +34,7 @@ public class Login extends AppCompatActivity {
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
 
-    @SuppressLint("CutPasteId")
+    @SuppressLint({"CutPasteId", "ObsoleteSdkInt"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
