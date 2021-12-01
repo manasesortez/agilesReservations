@@ -24,7 +24,6 @@ import android.widget.Toast;
 
 import com.amtodev.hospitalReservations.Class.ConexionSQLite;
 import com.amtodev.hospitalReservations.R;
-import com.amtodev.hospitalReservations.admin.Specialty.UpdateSpeciality;
 import com.amtodev.hospitalReservations.admin.Specialty.ViewSpecialty;
 
 import java.text.ParseException;
@@ -218,19 +217,6 @@ public class UpdateDoctor extends AppCompatActivity {
             Toast.makeText(UpdateDoctor.this, "Error: "+ error.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
-
-    private void delete(){
-        try{
-            SQLiteDatabase miBaseDatos = objConexion.getWritableDatabase();
-            String comando = "DELETE FROM doctores WHERE doctor_id ='"+ doctores_id + "'";
-            miBaseDatos.execSQL(comando);
-            miBaseDatos.close();
-            Toast.makeText(UpdateDoctor.this, "Hospital successfully Delete", Toast.LENGTH_SHORT).show();
-        }catch (Exception error){
-            Toast.makeText(UpdateDoctor.this, "Error: "+ error.getMessage(), Toast.LENGTH_SHORT).show();
-        }
-    }
-
     @Override
     protected void onResume() {
         super.onResume();
@@ -260,6 +246,21 @@ public class UpdateDoctor extends AppCompatActivity {
                     tv_horaSalidaUpdate.setText(cadaRegistro.getString(6));
                 }while(cadaRegistro.moveToNext());
             }
+        }catch (Exception error){
+            Toast.makeText(UpdateDoctor.this, "Error: "+ error.getMessage(), Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
+
+
+    private void delete(){
+        try{
+            SQLiteDatabase miBaseDatos = objConexion.getWritableDatabase();
+            String comando = "DELETE FROM doctores WHERE doctor_id ='"+ doctores_id + "'";
+            miBaseDatos.execSQL(comando);
+            miBaseDatos.close();
+            Toast.makeText(UpdateDoctor.this, "Hospital successfully Delete", Toast.LENGTH_SHORT).show();
         }catch (Exception error){
             Toast.makeText(UpdateDoctor.this, "Error: "+ error.getMessage(), Toast.LENGTH_SHORT).show();
         }

@@ -1,0 +1,63 @@
+package com.amtodev.hospitalReservations.user.Adapter;
+
+import android.annotation.SuppressLint;
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.amtodev.hospitalReservations.R;
+
+import java.util.ArrayList;
+
+public class AdapterHospital extends RecyclerView.Adapter<AdapterHospital.DataViewHolder> {
+
+    Context context;
+    ArrayList<DataHospital> listHospital;
+
+    public AdapterHospital(Context context, ArrayList<DataHospital> listHospital) {
+        this.context = context;
+        this.listHospital = listHospital;
+    }
+
+    @NonNull
+    @Override
+    public DataViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_recyclerview, parent, false);
+        return new DataViewHolder(itemView);
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull DataViewHolder holder, int position){
+        holder.viewBind(listHospital.get(position));
+
+    }
+
+    @Override
+    public int getItemCount() {
+        return listHospital.size();
+    }
+
+    public class DataViewHolder extends RecyclerView.ViewHolder {
+        TextView tv_nombreHospital, tv_NumberHospital, tv_Direccion;
+        public DataViewHolder(@NonNull View itemView) {
+            super(itemView);
+            tv_nombreHospital = itemView.findViewById(R.id.hospitalName);
+            tv_NumberHospital = itemView.findViewById(R.id.HospitalNumber);
+            tv_Direccion = itemView.findViewById(R.id.HospitalAddress);
+
+        }
+
+        @SuppressLint("SetTextI18n")
+        public void viewBind(DataHospital dataHospital) {
+            tv_nombreHospital.setText(dataHospital.getHospital_nombre());
+            tv_NumberHospital.setText("Numero: " + dataHospital.getHospital_telefono());
+            tv_Direccion.setText("Direccion: " + dataHospital.getHospital_direccion());
+
+        }
+    }
+}

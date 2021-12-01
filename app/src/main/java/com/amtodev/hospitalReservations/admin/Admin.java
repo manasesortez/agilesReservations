@@ -1,15 +1,19 @@
 package com.amtodev.hospitalReservations.admin;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.amtodev.hospitalReservations.Login;
 import com.amtodev.hospitalReservations.R;
 import com.amtodev.hospitalReservations.admin.Doctor.AdminDoctor;
+import com.amtodev.hospitalReservations.admin.Doctor.UpdateDoctor;
 import com.amtodev.hospitalReservations.admin.Hospital.AdminHospital;
 import com.amtodev.hospitalReservations.admin.Specialty.AdminSpecialty;
 import com.amtodev.hospitalReservations.forget_password;
@@ -25,17 +29,37 @@ public class Admin extends AppCompatActivity {
         logoutAdmin.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                logoutAdmin(view);
-                finish();
+                openDialog(view);
             }
         });
     }
 
-    public void logoutAdmin(View view){
+    public void logoutAdmin(){
         FirebaseAuth.getInstance().signOut();
         startActivity(new Intent(getApplicationContext(), Login.class));
         finish();
     }
+
+    public void openDialog(View view){
+        AlertDialog.Builder builder = new AlertDialog.Builder(Admin.this);
+        builder.setTitle("Confirm");
+        builder.setMessage("Are you Sure to Logout");
+        builder.setPositiveButton("Yes, Logout", new DialogInterface.OnClickListener(){
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                logoutAdmin();
+            }
+        });
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener(){
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Toast.makeText(Admin.this, "No Logout", Toast.LENGTH_SHORT).show();
+            }
+        });
+        builder.create();
+        builder.show();
+    }
+
 
     public void openAdminDoctor(View View){
         startActivity(new Intent(this, AdminDoctor.class));

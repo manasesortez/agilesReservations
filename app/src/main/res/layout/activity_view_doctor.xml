@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     android:background="#C2EDEB"
     tools:context=".admin.Doctor.ViewDoctor">
+
+
     <ListView
         android:id="@+id/lvDoctors"
         android:layout_width="411dp"

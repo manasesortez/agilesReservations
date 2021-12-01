@@ -2,13 +2,18 @@ package com.amtodev.hospitalReservations.Class;
 
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.amtodev.hospitalReservations.admin.Doctor.ViewDoctor;
+
 public class ConexionSQLite extends SQLiteOpenHelper {
+
+    private static final String NOMBRE_BASE_DATOS = "agilesReservas";
 
     final String TABLE_HOSPITAL = "CREATE TABLE hospitales (" +
             "hospital_id INTEGER PRIMARY KEY  AUTOINCREMENT  UNIQUE NOT NULL," +
@@ -68,4 +73,15 @@ public class ConexionSQLite extends SQLiteOpenHelper {
 
         onCreate(db);
     }
+
+    public Cursor getShowDataHospital(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.rawQuery("SELECT * FROM hospitales ", null);
+    }
+
+    public Cursor getSearchHospital(String hospital_id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.rawQuery("SELECT hospital_id, hospital_nombre, hospital_telefono, hospital_direccion FROM hospitales  WHERE hospital_id = " + hospital_id + " ", null);
+    }
+
 }
