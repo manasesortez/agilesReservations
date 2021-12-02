@@ -222,7 +222,7 @@ public class UpdateDoctor extends AppCompatActivity {
         super.onResume();
         Bundle valoresAdicionales = getIntent().getExtras();
         if (valoresAdicionales == null){
-            Toast.makeText(UpdateDoctor.this, "You need send some Hospital ID", Toast.LENGTH_SHORT).show();
+            Toast.makeText(UpdateDoctor.this, "You need send some InterHospital ID", Toast.LENGTH_SHORT).show();
             doctores_id = 0;
             GoBackActivity();
         }else{
@@ -260,7 +260,7 @@ public class UpdateDoctor extends AppCompatActivity {
             String comando = "DELETE FROM doctores WHERE doctor_id ='"+ doctores_id + "'";
             miBaseDatos.execSQL(comando);
             miBaseDatos.close();
-            Toast.makeText(UpdateDoctor.this, "Hospital successfully Delete", Toast.LENGTH_SHORT).show();
+            Toast.makeText(UpdateDoctor.this, "InterHospital successfully Delete", Toast.LENGTH_SHORT).show();
         }catch (Exception error){
             Toast.makeText(UpdateDoctor.this, "Error: "+ error.getMessage(), Toast.LENGTH_SHORT).show();
         }
@@ -269,7 +269,7 @@ public class UpdateDoctor extends AppCompatActivity {
     public void openDialog(){
         AlertDialog.Builder builder = new AlertDialog.Builder(UpdateDoctor.this);
         builder.setTitle("Confirm");
-        builder.setMessage("Do you want to delete this Hospital?");
+        builder.setMessage("Do you want to delete this InterHospital?");
         builder.setPositiveButton("Yes, Delete", new DialogInterface.OnClickListener(){
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
@@ -279,7 +279,7 @@ public class UpdateDoctor extends AppCompatActivity {
         builder.setNegativeButton("No", new DialogInterface.OnClickListener(){
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                Toast.makeText(UpdateDoctor.this, "Hospital no Deleted", Toast.LENGTH_SHORT).show();
+                Toast.makeText(UpdateDoctor.this, "InterHospital no Deleted", Toast.LENGTH_SHORT).show();
             }
         });
         DoctorNameUpdate.getText().clear();

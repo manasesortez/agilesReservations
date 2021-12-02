@@ -2,12 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.amtodev.hospitalReservations">
-
     <!-- permission -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" tools:ignore="ScopedStorage" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
@@ -15,11 +16,16 @@
         android:allowBackup="true"
         android:icon="@drawable/agile"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@drawable/agile"
         android:supportsRtl="true"
-        android:requestLegacyExternalStorage="true"
         android:theme="@style/Theme.Hospital_reservations"
         tools:ignore="AllowBackup">
+        <activity
+            android:name=".user.UserSpecialty"
+            android:exported="false"
+            android:theme="@style/finalInfo"/>
+
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.provider"
@@ -28,21 +34,21 @@
             tools:ignore="ExportedContentProvider">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/rutas"/>
+                android:resource="@xml/rutas" />
         </provider>
 
         <activity
             android:name=".admin.Specialty.UpdateSpeciality"
             android:exported="false"
-            android:theme="@style/logout"/>
+            android:theme="@style/logout" />
         <activity
             android:name=".admin.Hospital.UpdateHospital"
             android:exported="false"
-            android:theme="@style/logout"/>
+            android:theme="@style/logout" />
         <activity
             android:name=".admin.Doctor.UpdateDoctor"
             android:exported="false"
-            android:theme="@style/logout"/>
+            android:theme="@style/logout" />
         <activity
             android:name=".admin.Doctor.AddDoctor"
             android:exported="false"

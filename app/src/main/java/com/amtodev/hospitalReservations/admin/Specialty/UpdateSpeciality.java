@@ -109,7 +109,7 @@ public class UpdateSpeciality extends AppCompatActivity {
             String comando = "DELETE FROM especialidades WHERE especialidad_id ='"+ especialidad_id + "'";
             miBaseDatos.execSQL(comando);
             miBaseDatos.close();
-            Toast.makeText(UpdateSpeciality.this, "Hospital successfully Delete", Toast.LENGTH_SHORT).show();
+            Toast.makeText(UpdateSpeciality.this, "InterHospital successfully Delete", Toast.LENGTH_SHORT).show();
         }catch (Exception error){
             Toast.makeText(UpdateSpeciality.this, "Error: "+ error.getMessage(), Toast.LENGTH_SHORT).show();
         }
@@ -120,7 +120,7 @@ public class UpdateSpeciality extends AppCompatActivity {
         super.onResume();
         Bundle valoresAdicionales = getIntent().getExtras();
         if (valoresAdicionales == null){
-            Toast.makeText(UpdateSpeciality.this, "You need send some Hospital ID", Toast.LENGTH_SHORT).show();
+            Toast.makeText(UpdateSpeciality.this, "You need send some InterHospital ID", Toast.LENGTH_SHORT).show();
             especialidad_id = 0;
             GoBackActivity();
         }else{
@@ -147,7 +147,7 @@ public class UpdateSpeciality extends AppCompatActivity {
     public void openDialog(){
         AlertDialog.Builder builder = new AlertDialog.Builder(UpdateSpeciality.this);
         builder.setTitle("Confirm");
-        builder.setMessage("Do you want to delete this Hospital?");
+        builder.setMessage("Do you want to delete this InterHospital?");
         builder.setPositiveButton("Yes, Delete", new DialogInterface.OnClickListener(){
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
@@ -157,7 +157,7 @@ public class UpdateSpeciality extends AppCompatActivity {
         builder.setNegativeButton("No", new DialogInterface.OnClickListener(){
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                Toast.makeText(UpdateSpeciality.this, "Hospital no Deleted", Toast.LENGTH_SHORT).show();
+                Toast.makeText(UpdateSpeciality.this, "InterHospital no Deleted", Toast.LENGTH_SHORT).show();
             }
         });
         builder.create();

@@ -79,9 +79,10 @@ public class ConexionSQLite extends SQLiteOpenHelper {
         return db.rawQuery("SELECT * FROM hospitales ", null);
     }
 
-    public Cursor getSearchHospital(String hospital_id){
+    public Cursor getShowDataSpecialty(){
         SQLiteDatabase db = this.getWritableDatabase();
-        return db.rawQuery("SELECT hospital_id, hospital_nombre, hospital_telefono, hospital_direccion FROM hospitales  WHERE hospital_id = " + hospital_id + " ", null);
+        return db.rawQuery("SELECT * FROM especialidades WHERE especialidades.hospital_id = hospitales.hospital_id  ORDER BY especialidad_nombre ASC ", null);
     }
+
 
 }

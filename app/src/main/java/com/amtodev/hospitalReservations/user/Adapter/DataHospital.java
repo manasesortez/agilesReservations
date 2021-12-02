@@ -1,5 +1,7 @@
 package com.amtodev.hospitalReservations.user.Adapter;
 
+import android.view.View;
+
 public class DataHospital {
     private String hospital_nombre;
     private String hospital_telefono;
@@ -38,4 +40,5 @@ public class DataHospital {
     public void setHospital_direccion(String hospital_direccion) {
         this.hospital_direccion = hospital_direccion;
     }
+
 }

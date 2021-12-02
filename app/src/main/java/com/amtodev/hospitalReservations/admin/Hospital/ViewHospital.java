@@ -174,7 +174,7 @@ public class ViewHospital extends AppCompatActivity {
         if (!carpeta.exists()){
             carpeta.mkdir();
         }else{
-            Log.i("Hospital", "Carpeta Existente");
+            Log.i("InterHospital", "Carpeta Existente");
         }
         tienePermisoAlmacenamiento = true;
     }
@@ -225,7 +225,7 @@ public class ViewHospital extends AppCompatActivity {
         try {
 
             DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyyMMddHHmmss");
-            String nombreArchivo = "Hospital"+dtf.format(LocalDateTime.now())+".pdf";
+            String nombreArchivo = "InterHospital"+dtf.format(LocalDateTime.now())+".pdf";
             File archivo = new File(DIRECTORIO_PDFS, nombreArchivo);
 
             PdfWriter pdfEscrito = new PdfWriter(archivo);

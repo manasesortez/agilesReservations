@@ -83,7 +83,7 @@ public class UpdateHospital extends AppCompatActivity {
             String comando = "UPDATE hospitales SET hospital_nombre='"+ HospitalNameUp.getText() + "'," + "hospital_telefono='"+ NumberPhoneUp.getText() + "'," + "hospital_direccion='"+ AddressUp.getText() + "' WHERE hospital_id= '" + hospital_id + "'";
             miBaseDatos.execSQL(comando);
             miBaseDatos.close();
-            Toast.makeText(UpdateHospital.this, "Hospital Successfully Update", Toast.LENGTH_SHORT).show();
+            Toast.makeText(UpdateHospital.this, "InterHospital Successfully Update", Toast.LENGTH_SHORT).show();
         }catch (Exception error){
             Toast.makeText(UpdateHospital.this, "Error: "+ error.getMessage(), Toast.LENGTH_SHORT).show();
         }
@@ -95,7 +95,7 @@ public class UpdateHospital extends AppCompatActivity {
             String comando = "DELETE FROM hospitales WHERE hospital_id ='"+ hospital_id + "'";
             miBaseDatos.execSQL(comando);
             miBaseDatos.close();
-            Toast.makeText(UpdateHospital.this, "Hospital successfully Delete", Toast.LENGTH_SHORT).show();
+            Toast.makeText(UpdateHospital.this, "InterHospital successfully Delete", Toast.LENGTH_SHORT).show();
         }catch (Exception error){
             Toast.makeText(UpdateHospital.this, "Error: "+ error.getMessage(), Toast.LENGTH_SHORT).show();
         }
@@ -112,7 +112,7 @@ public class UpdateHospital extends AppCompatActivity {
         super.onResume();
         Bundle valoresAdicionales = getIntent().getExtras();
         if (valoresAdicionales == null){
-            Toast.makeText(UpdateHospital.this, "You need send some Hospital ID", Toast.LENGTH_SHORT).show();
+            Toast.makeText(UpdateHospital.this, "You need send some InterHospital ID", Toast.LENGTH_SHORT).show();
             hospital_id = 0;
             GoBackActivity();
         }else{
@@ -142,7 +142,7 @@ public class UpdateHospital extends AppCompatActivity {
     public void openDialog(){
         AlertDialog.Builder builder = new AlertDialog.Builder(UpdateHospital.this);
         builder.setTitle("Confirm");
-        builder.setMessage("Do you want to delete this Hospital?");
+        builder.setMessage("Do you want to delete this InterHospital?");
         builder.setPositiveButton("Yes, Delete", new DialogInterface.OnClickListener(){
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
@@ -152,7 +152,7 @@ public class UpdateHospital extends AppCompatActivity {
         builder.setNegativeButton("No", new DialogInterface.OnClickListener(){
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                Toast.makeText(UpdateHospital.this, "Hospital no Deleted", Toast.LENGTH_SHORT).show();
+                Toast.makeText(UpdateHospital.this, "InterHospital no Deleted", Toast.LENGTH_SHORT).show();
             }
         });
         builder.create();

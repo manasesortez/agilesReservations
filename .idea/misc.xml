@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.1" />
         <entry key="app/src/main/res/drawable-v24/button.xml" value="0.1" />
         <entry key="app/src/main/res/drawable-v24/card_background.xml" value="0.1" />
         <entry key="app/src/main/res/drawable-v24/card_background_inside.xml" value="0.1638888888888889" />
@@ -17,6 +18,7 @@
         <entry key="app/src/main/res/drawable/ic_add_img.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_back_blue.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_back_img.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_baseline_close_24.xml" value="0.10277777777777777" />
         <entry key="app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.1638888888888889" />
         <entry key="app/src/main/res/drawable/ic_login_hero.xml" value="0.1638888888888889" />
         <entry key="app/src/main/res/drawable/ic_register_hero.xml" value="0.16203703703703703" />
@@ -36,12 +38,15 @@
         <entry key="app/src/main/res/layout/activity_update_speciality.xml" value="0.165" />
         <entry key="app/src/main/res/layout/activity_user.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_user_main.xml" value="0.11" />
+        <entry key="app/src/main/res/layout/activity_user_specialty.xml" value="0.11" />
         <entry key="app/src/main/res/layout/activity_view_doctor.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_view_hospital.xml" value="0.11" />
         <entry key="app/src/main/res/layout/activity_view_specialty.xml" value="0.125" />
         <entry key="app/src/main/res/layout/frame_list.xml" value="0.17395833333333333" />
-        <entry key="app/src/main/res/layout/item_recyclerview.xml" value="0.17559523809523808" />
+        <entry key="app/src/main/res/layout/item_recyclerspecialty.xml" value="0.17395833333333333" />
+        <entry key="app/src/main/res/layout/item_recyclerview.xml" value="0.125" />
         <entry key="app/src/main/res/layout/list_black_text.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/selector_item.xml" value="0.1" />
         <entry key="app/src/main/res/layout/spinner_item.xml" value="0.17395833333333333" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/agiles.xml" value="0.17407407407407408" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/agiles_round.xml" value="0.1" />
@@ -53,5 +58,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.1" />
+      </ProjectState>
+    </option>
   </component>
 </project>
