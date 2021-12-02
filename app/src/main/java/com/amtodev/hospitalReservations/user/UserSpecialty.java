@@ -128,6 +128,8 @@ public class UserSpecialty extends AppCompatActivity implements AdapterSpecialty
 
     @Override
     public void onSpecialtyClick(int position) {
-        Log.d(TAG, "position: " + position);
+        Intent intent = new Intent(this, UserDoctor.class);
+        intent.putExtra("especialidad_id", listSpecialty.get(position));
+        startActivity(intent);
     }
 }

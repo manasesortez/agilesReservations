@@ -37,12 +37,14 @@
         <entry key="app/src/main/res/layout/activity_update_hospital.xml" value="0.165" />
         <entry key="app/src/main/res/layout/activity_update_speciality.xml" value="0.165" />
         <entry key="app/src/main/res/layout/activity_user.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_user_doctor.xml" value="0.11597222222222223" />
         <entry key="app/src/main/res/layout/activity_user_main.xml" value="0.11" />
         <entry key="app/src/main/res/layout/activity_user_specialty.xml" value="0.125" />
         <entry key="app/src/main/res/layout/activity_view_doctor.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_view_hospital.xml" value="0.11" />
         <entry key="app/src/main/res/layout/activity_view_specialty.xml" value="0.125" />
         <entry key="app/src/main/res/layout/frame_list.xml" value="0.17395833333333333" />
+        <entry key="app/src/main/res/layout/item_recyclerdoctor.xml" value="0.11597222222222223" />
         <entry key="app/src/main/res/layout/item_recyclerspecialty.xml" value="0.17395833333333333" />
         <entry key="app/src/main/res/layout/item_recyclerview.xml" value="0.125" />
         <entry key="app/src/main/res/layout/list_black_text.xml" value="0.375" />
