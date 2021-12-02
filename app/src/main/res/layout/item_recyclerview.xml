@@ -36,6 +36,15 @@
             android:layout_marginTop="10dp"
             android:text="Numero"
             android:textColor="#000"
+            android:id="@+id/HospitalId"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Numero"
+            android:textColor="#000"
+            android:layout_marginTop="05dp"
             android:id="@+id/HospitalNumber"
             tools:ignore="HardcodedText" />
 
@@ -47,5 +56,6 @@
             android:id="@+id/HospitalAddress"
             android:layout_marginTop="05dp"
             tools:ignore="HardcodedText" />
+
     </LinearLayout>
 </androidx.cardview.widget.CardView>

@@ -84,6 +84,7 @@ public class UserMain extends AppCompatActivity implements AdapterHospital.OnHos
         listHospital.clear();
         while (res.moveToNext()){
             DataHospital hospital = new DataHospital(
+                    res.getString(0),
                     res.getString(1),
                     res.getString(2),
                     res.getString(3)
@@ -143,7 +144,8 @@ public class UserMain extends AppCompatActivity implements AdapterHospital.OnHos
     @Override
     public void onHospitalClick(int position) {
         Toast.makeText(UserMain.this, "Position is: " + position, Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(UserMain.this, UserSpecialty.class);
+        Intent intent = new Intent(this, UserSpecialty.class);
+        intent.putExtra("selected_note", listHospital.get(position));
         startActivity(intent);
     }
 }

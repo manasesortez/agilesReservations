@@ -4,23 +4,28 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.amtodev.hospitalReservations.Login;
 import com.amtodev.hospitalReservations.R;
-import com.google.firebase.auth.FirebaseAuth;
+import com.amtodev.hospitalReservations.user.Adapter.DataHospital;
 
 public class UserSpecialty extends AppCompatActivity {
+    private static final String TAG = "UserSpecialty";
     ImageButton SearchSpecialty;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_specialty);
+
+        if(getIntent().hasExtra("selected_note")){
+            DataHospital hospital = getIntent().getParcelableExtra("selected_note");
+            Log.d(TAG, "onCreate: " + hospital.toString());
+        }
 
         ImageView goBackActivity = findViewById(R.id.btnAfter);
         goBackActivity.setOnClickListener(new View.OnClickListener(){
@@ -29,6 +34,7 @@ public class UserSpecialty extends AppCompatActivity {
                 AfterActivity();
             }
         });
+
 
         SearchSpecialty = findViewById(R.id.btnSearchUserSpecialty);
         SearchSpecialty.setOnClickListener(new View.OnClickListener(){

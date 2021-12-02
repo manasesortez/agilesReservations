@@ -47,7 +47,7 @@ public class AdapterHospital extends RecyclerView.Adapter<AdapterHospital.DataVi
     }
 
     public class DataViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        TextView tv_nombreHospital, tv_NumberHospital, tv_Direccion;
+        TextView tv_registroID, tv_nombreHospital, tv_NumberHospital, tv_Direccion;
         OnHospitalListener onHospitalListener;
 
         public DataViewHolder(@NonNull View itemView, OnHospitalListener onHospitalListener) {
@@ -55,16 +55,17 @@ public class AdapterHospital extends RecyclerView.Adapter<AdapterHospital.DataVi
             tv_nombreHospital = itemView.findViewById(R.id.hospitalName);
             tv_NumberHospital = itemView.findViewById(R.id.HospitalNumber);
             tv_Direccion = itemView.findViewById(R.id.HospitalAddress);
+            tv_registroID = itemView.findViewById(R.id.HospitalId);
             itemView.setOnClickListener(this);
             this.onHospitalListener = onHospitalListener;
 
         }
         @SuppressLint("SetTextI18n")
         public void viewBind(DataHospital dataHospital) {
+            tv_registroID.setText("No. de Registro: " + dataHospital.getHospital_id());
             tv_nombreHospital.setText(dataHospital.getHospital_nombre());
             tv_NumberHospital.setText("Numero: " + dataHospital.getHospital_telefono());
             tv_Direccion.setText("Direccion: " + dataHospital.getHospital_direccion());
-
         }
 
         @Override
