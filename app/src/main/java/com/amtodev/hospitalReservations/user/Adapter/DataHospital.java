@@ -6,7 +6,7 @@ import android.view.View;
 
 public class DataHospital implements Parcelable {
 
-    private String hospital_id;
+    private Integer hospital_id;
     private String hospital_nombre;
     private String hospital_telefono;
     private String hospital_direccion;
@@ -14,18 +14,18 @@ public class DataHospital implements Parcelable {
     @Override
     public String toString() {
         return "DataHospital{" +
-                "hospital_id='" + hospital_id + '\'' +
+                "hospital_id=" + hospital_id +
                 ", hospital_nombre='" + hospital_nombre + '\'' +
                 ", hospital_telefono='" + hospital_telefono + '\'' +
                 ", hospital_direccion='" + hospital_direccion + '\'' +
-                '}';
+                "}";
     }
 
     public DataHospital(){
 
     }
 
-    public DataHospital(String hospital_id, String hospital_nombre, String hospital_telefono, String hospital_direccion){
+    public DataHospital(Integer hospital_id, String hospital_nombre, String hospital_telefono, String hospital_direccion){
         this.hospital_id = hospital_id;
         this.hospital_nombre = hospital_nombre;
         this.hospital_telefono = hospital_telefono;
@@ -33,7 +33,7 @@ public class DataHospital implements Parcelable {
     }
 
     protected DataHospital(Parcel in) {
-        hospital_id = in.readString();
+        hospital_id = in.readInt();
         hospital_nombre = in.readString();
         hospital_telefono = in.readString();
         hospital_direccion = in.readString();
@@ -52,11 +52,11 @@ public class DataHospital implements Parcelable {
         }
     };
 
-    public String getHospital_id() {
+    public Integer getHospital_id() {
         return hospital_id;
     }
 
-    public void setHospital_id(String hospital_id) {
+    public void setHospital_id(Integer hospital_id) {
         this.hospital_id = hospital_id;
     }
 
@@ -94,7 +94,7 @@ public class DataHospital implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(hospital_id);
+        parcel.writeInt(hospital_id);
         parcel.writeString(hospital_nombre);
         parcel.writeString(hospital_telefono);
         parcel.writeString(hospital_direccion);

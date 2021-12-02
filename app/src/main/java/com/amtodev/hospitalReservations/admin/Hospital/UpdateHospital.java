@@ -115,6 +115,7 @@ public class UpdateHospital extends AppCompatActivity {
             Toast.makeText(UpdateHospital.this, "You need send some InterHospital ID", Toast.LENGTH_SHORT).show();
             hospital_id = 0;
             GoBackActivity();
+
         }else{
             hospital_id = valoresAdicionales.getInt("hospital_id");
             verContacto();

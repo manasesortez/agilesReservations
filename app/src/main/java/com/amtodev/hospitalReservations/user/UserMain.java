@@ -45,9 +45,6 @@ public class UserMain extends AppCompatActivity implements AdapterHospital.OnHos
     ProgressDialog progressDialog;
     ImageButton SearchHospital;
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,16 +72,15 @@ public class UserMain extends AppCompatActivity implements AdapterHospital.OnHos
         showData();
     }
 
-
-
     private void showData() {
+        DataHospital hospital;
         progressDialog.setMessage("Loading...");
         progressDialog.show();
         Cursor res = objConexion.getShowDataHospital();
         listHospital.clear();
         while (res.moveToNext()){
-            DataHospital hospital = new DataHospital(
-                    res.getString(0),
+             hospital = new DataHospital(
+                    res.getInt(0),
                     res.getString(1),
                     res.getString(2),
                     res.getString(3)
@@ -95,8 +91,6 @@ public class UserMain extends AppCompatActivity implements AdapterHospital.OnHos
         recycleViewHospital.setAdapter(adapterHospital);
         progressDialog.dismiss();
     }
-
-
 
     public void buscar(){
 
@@ -143,9 +137,8 @@ public class UserMain extends AppCompatActivity implements AdapterHospital.OnHos
 
     @Override
     public void onHospitalClick(int position) {
-        Toast.makeText(UserMain.this, "Position is: " + position, Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, UserSpecialty.class);
-        intent.putExtra("selected_note", listHospital.get(position));
+        intent.putExtra("hospital_id", listHospital.get(position));
         startActivity(intent);
     }
 }
