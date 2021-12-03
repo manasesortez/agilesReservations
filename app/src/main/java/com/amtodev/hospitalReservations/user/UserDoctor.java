@@ -94,12 +94,13 @@ public class UserDoctor extends AppCompatActivity implements AdapterDoctor.OnDoc
             if(getIntent().hasExtra("especialidad_id")) {
                 DataSpecialty especialtyInfo= getIntent().getParcelableExtra("especialidad_id");
                 int especialidad_id = especialtyInfo.getEspecialidad_id();
-
+                int hospital_id = especialtyInfo.getHospital_id();
+                Toast.makeText(UserDoctor.this, "Hospital_id: " + hospital_id, Toast.LENGTH_LONG).show();
 
                 DataDoctor doctor;
                 progressDialog.setMessage("Loading...");
                 progressDialog.show();
-                Cursor res = objConexion.getShowDataDoctor(especialidad_id);
+                Cursor res = objConexion.getShowDataDoctor(especialidad_id, hospital_id);
                 listDoctor.clear();
                 while (res.moveToNext()){
                     doctor = new DataDoctor(

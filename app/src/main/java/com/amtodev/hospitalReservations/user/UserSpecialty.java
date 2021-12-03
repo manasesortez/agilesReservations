@@ -102,7 +102,8 @@ public class UserSpecialty extends AppCompatActivity implements AdapterSpecialty
                     specialialty = new DataSpecialty(
                             res.getInt(0),
                             res.getString(1),
-                            res.getString(2)
+                            res.getString(2),
+                            res.getInt(3)
                     );
                     listSpecialty.add(specialialty);
                 }

@@ -8,11 +8,13 @@ public class DataSpecialty implements Parcelable {
     private Integer especialidad_id;
     private String especialidad_nombre;
     private String hospital_name;
+    private Integer hospital_id;
 
-    public DataSpecialty(Integer especialidad_id, String especialidad_nombre, String hospital_name) {
+    public DataSpecialty(Integer especialidad_id, String especialidad_nombre, String hospital_name, Integer hospital_id) {
         this.especialidad_id = especialidad_id;
         this.especialidad_nombre = especialidad_nombre;
         this.hospital_name = hospital_name;
+        this.hospital_id = hospital_id;
     }
 
     protected DataSpecialty(Parcel in) {
@@ -23,6 +25,7 @@ public class DataSpecialty implements Parcelable {
         }
         especialidad_nombre = in.readString();
         hospital_name = in.readString();
+        hospital_id = in.readInt();
     }
 
     public static final Creator<DataSpecialty> CREATOR = new Creator<DataSpecialty>() {
@@ -61,15 +64,24 @@ public class DataSpecialty implements Parcelable {
         this.hospital_name = hospital_name;
     }
 
+    public Integer getHospital_id() {
+        return hospital_id;
+    }
+
+    public void setHospital_id(Integer hospital_id) {
+        this.hospital_id = hospital_id;
+    }
+
+
     @Override
     public String toString() {
         return "DataSpecialty{" +
                 "especialidad_id=" + especialidad_id +
                 ", especialidad_nombre='" + especialidad_nombre + '\'' +
                 ", hospital_name='" + hospital_name + '\'' +
+                ", hospital_id='" + hospital_id + '\'' +
                 '}';
     }
-
 
     @Override
     public int describeContents() {
@@ -86,5 +98,6 @@ public class DataSpecialty implements Parcelable {
         }
         parcel.writeString(especialidad_nombre);
         parcel.writeString(hospital_name);
+        parcel.writeInt(hospital_id);
     }
 }
