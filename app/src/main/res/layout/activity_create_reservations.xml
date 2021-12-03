@@ -12,19 +12,18 @@
         android:id="@+id/animationView"
         android:layout_width="300dp"
         android:layout_height="300dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.927"
+        app:layout_constraintTop_toBottomOf="@+id/recycleViewDoctorInfo"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/calender"
         tools:ignore="MissingConstraints" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycleViewSpecialty"
+        android:id="@+id/recycleViewDoctorInfo"
         android:layout_width="409dp"
         android:layout_height="140dp"
         android:layout_marginTop="320dp"
@@ -48,7 +47,7 @@
         android:layout_weight="3"
         android:background="@drawable/card_background_inside"
         android:elevation="36dp"
-        app:layout_constraintBottom_toTopOf="@+id/recycleViewSpecialty"
+        app:layout_constraintBottom_toTopOf="@+id/recycleViewDoctorInfo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -75,7 +74,7 @@
 
 
             <ImageView
-                android:id="@+id/btnAfter"
+                android:id="@+id/backActivityReservations"
                 android:layout_width="34dp"
                 android:layout_height="34dp"
                 android:layout_alignParentStart="true"
@@ -106,7 +105,7 @@
                 tools:ignore="HardcodedText,SpUsage" />
 
             <TextView
-                android:id="@+id/txtNombreDoctorUpdate"
+                android:id="@+id/txtConsultationTime"
                 android:layout_width="353dp"
                 android:layout_height="40dp"
                 android:layout_below="@+id/textView"
@@ -130,7 +129,7 @@
                 tools:ignore="Autofill,HardcodedText,LabelFor,RtlCompat,RtlHardcoded,RtlSymmetry,SpUsage,TextFields,UnknownIdInLayout,UseCompatTextViewDrawableXml" />
 
             <EditText
-                android:id="@+id/txtAddressDoctorUpdate"
+                android:id="@+id/txtNamePacient"
                 android:layout_width="353dp"
                 android:layout_height="40dp"
                 android:layout_below="@+id/textView"
@@ -150,11 +149,11 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.451"
+                app:layout_constraintVertical_bias="0.456"
                 tools:ignore="Autofill,HardcodedText,LabelFor,RtlCompat,RtlHardcoded,RtlSymmetry,SpUsage,TextFields,UnknownIdInLayout" />
 
             <EditText
-                android:id="@+id/txtCostoDoctorUpdate"
+                android:id="@+id/txtStatusPatient"
                 android:layout_width="353dp"
                 android:layout_height="40dp"
                 android:layout_below="@+id/textView"
@@ -174,14 +173,14 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.711"
+                app:layout_constraintVertical_bias="0.686"
                 tools:ignore="Autofill,HardcodedText,LabelFor,RtlCompat,RtlHardcoded,RtlSymmetry,SpUsage,TextFields,UnknownIdInLayout" />
 
             <Button
-                android:id="@+id/btnSaveDoctorUpdate"
+                android:id="@+id/btnSaveReservation"
                 android:layout_width="151dp"
                 android:layout_height="39dp"
-                android:layout_below="@+id/txtCostoDoctorUpdate"
+                android:layout_below="@+id/txtStatusPatient"
                 android:background="@drawable/button"
                 android:text="Save"
                 android:textAlignment="center"
@@ -190,6 +189,26 @@
                 android:textSize="40px"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.192"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.933"
+                tools:ignore="HardcodedText" />
+
+            <Button
+                android:id="@+id/btnSaveReservation2"
+                android:layout_width="151dp"
+                android:layout_height="39dp"
+                android:layout_below="@+id/txtStatusPatient"
+                android:background="@drawable/button"
+                android:text="View All"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="40px"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.83"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.933"

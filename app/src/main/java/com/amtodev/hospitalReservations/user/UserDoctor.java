@@ -95,7 +95,6 @@ public class UserDoctor extends AppCompatActivity implements AdapterDoctor.OnDoc
                 DataSpecialty especialtyInfo= getIntent().getParcelableExtra("especialidad_id");
                 int especialidad_id = especialtyInfo.getEspecialidad_id();
                 int hospital_id = especialtyInfo.getHospital_id();
-                Toast.makeText(UserDoctor.this, "Hospital_id: " + hospital_id, Toast.LENGTH_LONG).show();
 
                 DataDoctor doctor;
                 progressDialog.setMessage("Loading...");
@@ -143,7 +142,6 @@ public class UserDoctor extends AppCompatActivity implements AdapterDoctor.OnDoc
     public void onDoctorClick(int position) {
         Intent intent = new Intent(this, CreateReservations.class);
         intent.putExtra("doctor_id", listDoctor.get(position));
-        Toast.makeText(UserDoctor.this, "doctor_id: " + listDoctor.get(position), Toast.LENGTH_LONG).show();
         startActivity(intent);
     }
 }

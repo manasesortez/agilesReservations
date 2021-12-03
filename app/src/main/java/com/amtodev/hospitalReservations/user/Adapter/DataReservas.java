@@ -6,6 +6,7 @@ import android.os.Parcelable;
 public class DataReservas implements Parcelable {
 
     private Integer reserva_id;
+    private String reserva_hora_consulta;
     private String reserva_nombre_paciente;
     private String reserva_estado_paciente;
     private String hospital_name;
@@ -14,6 +15,21 @@ public class DataReservas implements Parcelable {
     private Integer hospital_id;
     private Integer especialidad_id;
     private Integer doctor_id;
+    private String reservas_user_id;
+
+    public DataReservas(Integer reserva_id, String reserva_hora_consulta, String reserva_nombre_paciente, String reserva_estado_paciente, String hospital_name, String especialidad_name, String doctor_name, Integer hospital_id, Integer especialidad_id, Integer doctor_id, String reservas_user_id) {
+        this.reserva_id = reserva_id;
+        this.reserva_hora_consulta = reserva_hora_consulta;
+        this.reserva_nombre_paciente = reserva_nombre_paciente;
+        this.reserva_estado_paciente = reserva_estado_paciente;
+        this.hospital_name = hospital_name;
+        this.especialidad_name = especialidad_name;
+        this.doctor_name = doctor_name;
+        this.hospital_id = hospital_id;
+        this.especialidad_id = especialidad_id;
+        this.doctor_id = doctor_id;
+        this.reservas_user_id = reservas_user_id;
+    }
 
     protected DataReservas(Parcel in) {
         if (in.readByte() == 0) {
@@ -21,6 +37,7 @@ public class DataReservas implements Parcelable {
         } else {
             reserva_id = in.readInt();
         }
+        reserva_hora_consulta = in.readString();
         reserva_nombre_paciente = in.readString();
         reserva_estado_paciente = in.readString();
         hospital_name = in.readString();
@@ -41,6 +58,7 @@ public class DataReservas implements Parcelable {
         } else {
             doctor_id = in.readInt();
         }
+        reservas_user_id = in.readString();
     }
 
     public static final Creator<DataReservas> CREATOR = new Creator<DataReservas>() {
@@ -61,6 +79,14 @@ public class DataReservas implements Parcelable {
 
     public void setReserva_id(Integer reserva_id) {
         this.reserva_id = reserva_id;
+    }
+
+    public String getReserva_hora_consulta() {
+        return reserva_hora_consulta;
+    }
+
+    public void setReserva_hora_consulta(String reserva_hora_consulta) {
+        this.reserva_hora_consulta = reserva_hora_consulta;
     }
 
     public String getReserva_nombre_paciente() {
@@ -127,22 +153,19 @@ public class DataReservas implements Parcelable {
         this.doctor_id = doctor_id;
     }
 
-    public DataReservas(Integer reserva_id, String reserva_nombre_paciente, String reserva_estado_paciente, String hospital_name, String especialidad_name, String doctor_name, Integer hospital_id, Integer especialidad_id, Integer doctor_id) {
-        this.reserva_id = reserva_id;
-        this.reserva_nombre_paciente = reserva_nombre_paciente;
-        this.reserva_estado_paciente = reserva_estado_paciente;
-        this.hospital_name = hospital_name;
-        this.especialidad_name = especialidad_name;
-        this.doctor_name = doctor_name;
-        this.hospital_id = hospital_id;
-        this.especialidad_id = especialidad_id;
-        this.doctor_id = doctor_id;
+    public String getReservas_user_id() {
+        return reservas_user_id;
+    }
+
+    public void setReservas_user_id(String reservas_user_id) {
+        this.reservas_user_id = reservas_user_id;
     }
 
     @Override
     public String toString() {
         return "DataReservas{" +
                 "reserva_id=" + reserva_id +
+                ", reserva_hora_consulta='" + reserva_hora_consulta + '\'' +
                 ", reserva_nombre_paciente='" + reserva_nombre_paciente + '\'' +
                 ", reserva_estado_paciente='" + reserva_estado_paciente + '\'' +
                 ", hospital_name='" + hospital_name + '\'' +
@@ -151,6 +174,7 @@ public class DataReservas implements Parcelable {
                 ", hospital_id=" + hospital_id +
                 ", especialidad_id=" + especialidad_id +
                 ", doctor_id=" + doctor_id +
+                ", reservas_user_id='" + reservas_user_id + '\'' +
                 '}';
     }
 
@@ -167,6 +191,7 @@ public class DataReservas implements Parcelable {
             parcel.writeByte((byte) 1);
             parcel.writeInt(reserva_id);
         }
+        parcel.writeString(reserva_hora_consulta);
         parcel.writeString(reserva_nombre_paciente);
         parcel.writeString(reserva_estado_paciente);
         parcel.writeString(hospital_name);
@@ -190,5 +215,6 @@ public class DataReservas implements Parcelable {
             parcel.writeByte((byte) 1);
             parcel.writeInt(doctor_id);
         }
+        parcel.writeString(reservas_user_id);
     }
 }

@@ -89,4 +89,6 @@ public class AdapterDoctor extends RecyclerView.Adapter<AdapterDoctor.DataViewHo
     public interface OnDoctorListener{
         void onDoctorClick(int position);
     }
+
+
 }

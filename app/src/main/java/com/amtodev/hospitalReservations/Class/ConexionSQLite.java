@@ -48,6 +48,7 @@ public class ConexionSQLite extends SQLiteOpenHelper {
             "hospital_id INTEGER NOT NULL," +
             "especialidad_id INTEGER NOT NULL," +
             "doctor_id INTEGER NOT NULL," +
+            "reservas_user_id TEXT NOT NULL, " +
             "FOREIGN KEY (hospital_id) REFERENCES hospitales(hospital_id) ON UPDATE CASCADE ON DELETE CASCADE," +
             "FOREIGN KEY (especialidad_id) REFERENCES especialidades(especialidad_id) ON UPDATE CASCADE ON DELETE CASCADE," +
             "FOREIGN KEY (doctor_id) REFERENCES doctores(doctor_id) ON UPDATE CASCADE ON DELETE CASCADE )";
@@ -87,6 +88,11 @@ public class ConexionSQLite extends SQLiteOpenHelper {
     public Cursor getShowDataDoctor(int especialidad_id, int hospital_id){
         SQLiteDatabase db = this.getWritableDatabase();
         return db.rawQuery("SELECT doctor_id, doctor_name, doctor_direccion, doctor_costo_consulta, doctor_dias_habiles, doctor_hora_entrada, doctor_hora_salida, hospital_nombre, especialidad_nombre, doctores.hospital_id, doctores.especialidad_id FROM doctores, especialidades, hospitales WHERE doctores.especialidad_id LIKE  '%"+ especialidad_id + "%' AND especialidades.especialidad_id LIKE   '%"+ especialidad_id + "%' AND  especialidades.hospital_id LIKE   '%"+ hospital_id + "%' AND  hospitales.hospital_id LIKE   '%"+ hospital_id + "%' ORDER BY doctores.doctor_name DESC ", null);
+    }
+
+    public Cursor getShowDataDoctorInfo(int especialidad_id, int hospital_id, int doctor_id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.rawQuery("SELECT doctores.hospital_id, doctores.especialidad_id, doctores.doctor_id , hospital_nombre , especialidad_nombre, doctor_name FROM doctores, especialidades, hospitales WHERE doctores.especialidad_id LIKE  '%"+ especialidad_id + "%' AND especialidades.especialidad_id LIKE   '%"+ especialidad_id + "%' AND  especialidades.hospital_id LIKE   '%"+ hospital_id + "%' AND  hospitales.hospital_id LIKE   '%"+ hospital_id + "%' AND  doctores.doctor_id LIKE   '%"+ doctor_id + "%' ORDER BY doctores.doctor_name ASC ", null);
     }
 
 }

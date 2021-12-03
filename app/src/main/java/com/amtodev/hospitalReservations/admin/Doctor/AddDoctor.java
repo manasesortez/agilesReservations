@@ -99,7 +99,6 @@ public class AddDoctor extends AppCompatActivity {
                 timePickerDialog.show();
             }
         });
-
         tv_horaSalida.setOnClickListener(new View.OnClickListener()     {
             @Override
             public void onClick(View view) {
@@ -134,7 +133,6 @@ public class AddDoctor extends AppCompatActivity {
                 timePickerDialog.show();
             }
         });
-
 
         btn_AddDoctor = (Button) findViewById(R.id.btnSaveDoctor);
         btn_AddDoctor.setOnClickListener(new View.OnClickListener(){
