@@ -86,7 +86,7 @@ public class ConexionSQLite extends SQLiteOpenHelper {
 
     public Cursor getShowDataDoctor(int especialidad_id, int hospital_id){
         SQLiteDatabase db = this.getWritableDatabase();
-        return db.rawQuery("SELECT doctor_id, doctor_name, doctor_direccion, doctor_costo_consulta, doctor_dias_habiles, doctor_hora_entrada, doctor_hora_salida, hospital_nombre, especialidad_nombre FROM doctores, especialidades, hospitales WHERE doctores.especialidad_id LIKE  '%"+ especialidad_id + "%' AND especialidades.especialidad_id LIKE   '%"+ especialidad_id + "%' OR doctores.hospital_id LIKE  '%"+ hospital_id + "%' AND hospitales.hospital_id LIKE '%"+ hospital_id + "%' ORDER BY doctores.doctor_name ASC ", null);
+        return db.rawQuery("SELECT doctor_id, doctor_name, doctor_direccion, doctor_costo_consulta, doctor_dias_habiles, doctor_hora_entrada, doctor_hora_salida, hospital_nombre, especialidad_nombre FROM doctores, especialidades, hospitales WHERE doctores.especialidad_id LIKE  '%"+ especialidad_id + "%' AND especialidades.especialidad_id LIKE   '%"+ especialidad_id + "%' AND  especialidades.hospital_id LIKE   '%"+ hospital_id + "%' AND  hospitales.hospital_id LIKE   '%"+ hospital_id + "%' ORDER BY doctores.doctor_name DESC ", null);
     }
 
 }
