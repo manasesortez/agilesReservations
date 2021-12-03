@@ -112,7 +112,9 @@ public class UserDoctor extends AppCompatActivity implements AdapterDoctor.OnDoc
                             res.getString(5),
                             res.getString(6),
                             res.getString(7),
-                            res.getString(8)
+                            res.getString(8),
+                            res.getInt(9),
+                            res.getInt(10)
                     );
                     listDoctor.add(doctor);
                 }

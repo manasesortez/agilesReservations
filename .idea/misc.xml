@@ -29,6 +29,7 @@
         <entry key="app/src/main/res/layout/activity_admin_doctor.xml" value="0.125" />
         <entry key="app/src/main/res/layout/activity_admin_hospital.xml" value="0.17395833333333333" />
         <entry key="app/src/main/res/layout/activity_admin_specialty.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_create_reservations.xml" value="0.11" />
         <entry key="app/src/main/res/layout/activity_forget_password.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
@@ -47,6 +48,7 @@
         <entry key="app/src/main/res/layout/item_recyclerdoctor.xml" value="0.11597222222222223" />
         <entry key="app/src/main/res/layout/item_recyclerspecialty.xml" value="0.17395833333333333" />
         <entry key="app/src/main/res/layout/item_recyclerview.xml" value="0.125" />
+        <entry key="app/src/main/res/layout/item_viewdoctor_info.xml" value="0.11597222222222223" />
         <entry key="app/src/main/res/layout/list_black_text.xml" value="0.375" />
         <entry key="app/src/main/res/layout/selector_item.xml" value="0.1" />
         <entry key="app/src/main/res/layout/spinner_item.xml" value="0.17395833333333333" />

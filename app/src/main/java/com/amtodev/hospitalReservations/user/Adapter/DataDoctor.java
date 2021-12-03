@@ -14,8 +14,11 @@ public class DataDoctor implements Parcelable {
     private String doctor_hora_salida;
     private String hospital_name;
     private String especialidad_name;
+    private Integer hospital_id;
+    private Integer especialidad_id;
 
-    public DataDoctor(Integer doctor_id, String doctor_name, String doctor_direccion, String doctor_costo_consulta, String doctor_dias_habiles, String doctor_hora_entrada, String doctor_hora_salida, String hospital_name, String especialidad_name) {
+
+    public DataDoctor(Integer doctor_id, String doctor_name, String doctor_direccion, String doctor_costo_consulta, String doctor_dias_habiles, String doctor_hora_entrada, String doctor_hora_salida, String hospital_name, String especialidad_name, Integer hospital_id, Integer especialidad_id) {
         this.doctor_id = doctor_id;
         this.doctor_name = doctor_name;
         this.doctor_direccion = doctor_direccion;
@@ -25,10 +28,8 @@ public class DataDoctor implements Parcelable {
         this.doctor_hora_salida = doctor_hora_salida;
         this.hospital_name = hospital_name;
         this.especialidad_name = especialidad_name;
-    }
-
-    public DataDoctor(){
-
+        this.hospital_id = hospital_id;
+        this.especialidad_id = especialidad_id;
     }
 
     protected DataDoctor(Parcel in) {
@@ -45,6 +46,16 @@ public class DataDoctor implements Parcelable {
         doctor_hora_salida = in.readString();
         hospital_name = in.readString();
         especialidad_name = in.readString();
+        if (in.readByte() == 0) {
+            hospital_id = null;
+        } else {
+            hospital_id = in.readInt();
+        }
+        if (in.readByte() == 0) {
+            especialidad_id = null;
+        } else {
+            especialidad_id = in.readInt();
+        }
     }
 
     public static final Creator<DataDoctor> CREATOR = new Creator<DataDoctor>() {
@@ -131,6 +142,23 @@ public class DataDoctor implements Parcelable {
         this.especialidad_name = especialidad_name;
     }
 
+    public Integer getHospital_id() {
+        return hospital_id;
+    }
+
+    public void setHospital_id(Integer hospital_id) {
+        this.hospital_id = hospital_id;
+    }
+
+    public Integer getEspecialidad_id() {
+        return especialidad_id;
+    }
+
+    public void setEspecialidad_id(Integer especialidad_id) {
+        this.especialidad_id = especialidad_id;
+    }
+
+
     @Override
     public String toString() {
         return "DataDoctor{" +
@@ -143,6 +171,8 @@ public class DataDoctor implements Parcelable {
                 ", doctor_hora_salida='" + doctor_hora_salida + '\'' +
                 ", hospital_name='" + hospital_name + '\'' +
                 ", especialidad_name='" + especialidad_name + '\'' +
+                ", hospital_id=" + hospital_id +
+                ", especialidad_id=" + especialidad_id +
                 '}';
     }
 
@@ -167,5 +197,17 @@ public class DataDoctor implements Parcelable {
         parcel.writeString(doctor_hora_salida);
         parcel.writeString(hospital_name);
         parcel.writeString(especialidad_name);
+        if (hospital_id == null) {
+            parcel.writeByte((byte) 0);
+        } else {
+            parcel.writeByte((byte) 1);
+            parcel.writeInt(hospital_id);
+        }
+        if (especialidad_id == null) {
+            parcel.writeByte((byte) 0);
+        } else {
+            parcel.writeByte((byte) 1);
+            parcel.writeInt(especialidad_id);
+        }
     }
 }
