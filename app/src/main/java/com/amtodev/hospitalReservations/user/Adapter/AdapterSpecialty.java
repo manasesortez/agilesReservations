@@ -49,7 +49,7 @@ public class AdapterSpecialty extends RecyclerView.Adapter<AdapterSpecialty.Data
     }
 
 
-    public class DataViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener  {
+    public static class DataViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener  {
         TextView SpecialtyName, SpecialtyID, HospitalName;
         OnSpecialtyListener onSpecialtyListener;
 

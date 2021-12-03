@@ -7,6 +7,7 @@
     android:background="#C2EDEB"
     tools:context=".user.UserDoctor">
 
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycleViewDoctor"
         android:layout_width="408dp"
