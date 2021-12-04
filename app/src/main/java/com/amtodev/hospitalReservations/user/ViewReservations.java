@@ -148,6 +148,5 @@ public class ViewReservations extends AppCompatActivity implements AdapterReserv
 
     @Override
     public void onReservasClick(int position) {
-        finish();
     }
 }
