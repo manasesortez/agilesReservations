@@ -92,7 +92,6 @@ public class CreateReservations extends AppCompatActivity implements AdapterDoct
         txtNamePatient = findViewById(R.id.txtNamePacient);
         txtStatusPatient = findViewById(R.id.txtStatusPatient);
 
-        btnViewReservation = findViewById(R.id.btnViewReservation);
         btnSaveReservation = findViewById(R.id.btnSaveReservation);
         tv_horaConsulta.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -153,12 +152,6 @@ public class CreateReservations extends AppCompatActivity implements AdapterDoct
             }
         });
 
-        btnViewReservation.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                ViewReservations();
-            }
-        });
 
         showDataDoctorInfo();
     }
@@ -206,6 +199,7 @@ public class CreateReservations extends AppCompatActivity implements AdapterDoct
                 fAuth = FirebaseAuth.getInstance();
                 String UserId = fAuth.getCurrentUser().getUid();
 
+
                 SQLiteDatabase miBaseDatos = objConexion.getWritableDatabase();
                 values = new ContentValues();
 
@@ -219,6 +213,8 @@ public class CreateReservations extends AppCompatActivity implements AdapterDoct
 
                 miBaseDatos.insert("reservas", null, values);
                 miBaseDatos.close();
+                Toast.makeText(CreateReservations.this, "Reservation Add: " + miBaseDatos.toString() ,Toast.LENGTH_LONG).show();
+
             }catch(Exception error){
                 Toast.makeText(CreateReservations.this, "Error: " + error.getMessage(), Toast.LENGTH_SHORT).show();
             }

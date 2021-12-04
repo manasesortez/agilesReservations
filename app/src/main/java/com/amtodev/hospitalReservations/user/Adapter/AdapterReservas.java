@@ -57,9 +57,6 @@ public class AdapterReservas extends RecyclerView.Adapter<AdapterReservas.DataVi
             ReservacionPaciente = itemView.findViewById(R.id.ReservationPaciente);
             ReservacionHoraConsulta = itemView.findViewById(R.id.ReservationHoraConulta);
             ReservacionEstadoPaciente = itemView.findViewById(R.id.ReservationEstadoPaciente);
-            ReservacionDoctorName = itemView.findViewById(R.id.ReservationDoctorName);
-            ReservacionEspecialidadName = itemView.findViewById(R.id.ReservationEspecialidadName);
-            ReservacionHospitalName = itemView.findViewById(R.id.ReservationHospitalName);
             itemView.setOnClickListener(this);
             this.mOnReservasListener = mOnReservasListener;
         }
@@ -68,10 +65,7 @@ public class AdapterReservas extends RecyclerView.Adapter<AdapterReservas.DataVi
             ReservacionPaciente.setText(dataReservas.getReserva_nombre_paciente());
             ReservacionHoraConsulta.setText(dataReservas.getReserva_hora_consulta());
             ReservacionEstadoPaciente.setText("Estado: " + dataReservas.getReserva_estado_paciente());
-            ReservacionDoctorName.setText(dataReservas.getDoctor_name());
-            ReservacionEspecialidadName.setText(dataReservas.getEspecialidad_name());
-            ReservacionHospitalName.setText(dataReservas.getHospital_name());
-        }
+            }
 
         @Override
         public void onClick(View view) {

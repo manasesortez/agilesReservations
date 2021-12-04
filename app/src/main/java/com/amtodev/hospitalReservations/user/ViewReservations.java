@@ -148,5 +148,9 @@ public class ViewReservations extends AppCompatActivity implements AdapterReserv
 
     @Override
     public void onReservasClick(int position) {
+        Intent intent = new Intent(this, UserMain.class);
+        intent.putExtra("doctor_id_reser", listReservas.get(position));
+        Toast.makeText(ViewReservations.this, "Reservations: " + listReservas.get(position).toString(), Toast.LENGTH_LONG).show();
+        startActivity(intent);
     }
 }

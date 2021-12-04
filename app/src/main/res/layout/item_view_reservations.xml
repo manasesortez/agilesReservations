@@ -48,31 +48,6 @@
             android:id="@+id/ReservationEstadoPaciente"
             tools:ignore="HardcodedText" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Doctor Name"
-            android:textColor="#000"
-            android:id="@+id/ReservationDoctorName"
-            android:layout_marginTop="05dp"
-            tools:ignore="HardcodedText" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Especialidad"
-            android:textColor="#000"
-            android:id="@+id/ReservationEspecialidadName"
-            android:layout_marginTop="05dp"
-            tools:ignore="HardcodedText" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hospital"
-            android:textColor="#000"
-            android:id="@+id/ReservationHospitalName"
-            android:layout_marginTop="05dp"
-            tools:ignore="HardcodedText" />
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>
