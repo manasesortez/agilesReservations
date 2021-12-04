@@ -92,7 +92,23 @@ public class ConexionSQLite extends SQLiteOpenHelper {
 
     public Cursor getShowDataDoctorInfo(int especialidad_id, int hospital_id, int doctor_id){
         SQLiteDatabase db = this.getWritableDatabase();
-        return db.rawQuery("SELECT doctores.hospital_id, doctores.especialidad_id, doctores.doctor_id , hospital_nombre , especialidad_nombre, doctor_name FROM doctores, especialidades, hospitales WHERE  doctores.doctor_id LIKE   '%"+ doctor_id + "%' AND  doctores.especialidad_id LIKE  '%"+ especialidad_id + "%' AND especialidades.especialidad_id LIKE '%"+ especialidad_id + "%' AND  especialidades.hospital_id LIKE   '%"+ hospital_id + "%' AND  hospitales.hospital_id LIKE '%"+ hospital_id + "%'ORDER BY doctor_name ASC ", null);
+        return db.rawQuery("SELECT doctores.hospital_id, doctores.especialidad_id, doctores.doctor_id , hospital_nombre , especialidad_nombre, doctor_name FROM doctores, especialidades, hospitales WHERE  doctores.doctor_id LIKE   '%"+ doctor_id + "%' AND  doctores.especialidad_id LIKE  '%"+ especialidad_id + "%' AND especialidades.especialidad_id LIKE '%"+ especialidad_id + "%' AND  especialidades.hospital_id LIKE   '%"+ hospital_id + "%' AND  hospitales.hospital_id LIKE '%"+ hospital_id + "%' ORDER BY doctor_name ASC ", null);
+    }
+
+    public Cursor getShowDatReservations(int especialidad_id, int hospital_id, int doctor_id, String user_id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.rawQuery("SELECT reserva_id, reserva_hora_consulta, reserva_nombre_paciente, reserva_estado_paciente, hospital_nombre, especialidad_nombre, doctor_name, reservas.hospital_id, reservas.especialidad_id, reservas.doctor_id, reservas_user_id FROM reservas, doctores, especialidades, hospitales " +
+                "WHERE  reservas_user_id LIKE '%"+ user_id + "%' " +
+                "AND reservas.doctor_id LIKE '%"+ doctor_id + "%'" +
+                "AND doctores.doctor_id LIKE '%"+ doctor_id + "%'" +
+                "AND reservas.especialidad_id LIKE '%"+ especialidad_id + "%' " +
+                "AND doctores.especialidad_id LIKE '%"+ especialidad_id + "%'" +
+                "AND especialidades.especialidad_id LIKE '%"+ especialidad_id + "%' " +
+                "AND reservas.hospital_id LIKE '%"+ hospital_id + "%' " +
+                "AND doctores.hospital_id LIKE '%"+ hospital_id + "%'" +
+                "AND especialidades.hospital_id LIKE '%"+ hospital_id + "%'" +
+                "AND hospitales.hospital_id LIKE '%"+ hospital_id + "%'  " +
+                "ORDER BY reserva_nombre_paciente DESC ", null);
     }
 
 }

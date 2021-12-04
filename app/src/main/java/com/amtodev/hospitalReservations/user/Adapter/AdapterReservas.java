@@ -49,7 +49,6 @@ public class AdapterReservas extends RecyclerView.Adapter<AdapterReservas.DataVi
     }
 
     public class DataViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener  {
-
         TextView ReservacionPaciente,  ReservacionHoraConsulta, ReservacionEstadoPaciente, ReservacionDoctorName, ReservacionEspecialidadName, ReservacionHospitalName;
         AdapterReservas.OnReservasListener mOnReservasListener;
 

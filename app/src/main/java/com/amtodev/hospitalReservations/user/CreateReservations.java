@@ -159,6 +159,7 @@ public class CreateReservations extends AppCompatActivity implements AdapterDoct
                 ViewReservations();
             }
         });
+
         showDataDoctorInfo();
     }
 
@@ -242,5 +243,6 @@ public class CreateReservations extends AppCompatActivity implements AdapterDoct
     public void onDoctorInfoClick(int position) {
         Intent intent = new Intent(this, ViewReservations.class);
         intent.putExtra("doctor_id_info", listDoctorInfo.get(position));
+        startActivity(intent);
     }
 }

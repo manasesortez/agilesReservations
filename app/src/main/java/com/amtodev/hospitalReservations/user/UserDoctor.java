@@ -132,11 +132,7 @@ public class UserDoctor extends AppCompatActivity implements AdapterDoctor.OnDoc
         finish();
     }
 
-    @Override
-    public void onStop() {
-        super.onStop();
-        UserDoctor.this.finish();
-    }
+
 
     @Override
     public void onDoctorClick(int position) {
