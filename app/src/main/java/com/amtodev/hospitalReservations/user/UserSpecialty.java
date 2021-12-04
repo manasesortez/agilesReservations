@@ -131,5 +131,8 @@ public class UserSpecialty extends AppCompatActivity implements AdapterSpecialty
         Intent intent = new Intent(this, UserDoctor.class);
         intent.putExtra("especialidad_id", listSpecialty.get(position));
         startActivity(intent);
+        finish();
+
     }
+
 }

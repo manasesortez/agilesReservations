@@ -139,5 +139,6 @@ public class UserMain extends AppCompatActivity implements AdapterHospital.OnHos
         Intent intent = new Intent(this, UserSpecialty.class);
         intent.putExtra("hospital_id", listHospital.get(position));
         startActivity(intent);
+        finish();
     }
 }

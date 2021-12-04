@@ -241,5 +241,6 @@ public class CreateReservations extends AppCompatActivity implements AdapterDoct
         Intent intent = new Intent(this, ViewReservations.class);
         intent.putExtra("doctor_id_info", listDoctorInfo.get(position));
         startActivity(intent);
+        finish();
     }
 }

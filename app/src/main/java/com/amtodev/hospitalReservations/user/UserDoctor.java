@@ -138,5 +138,6 @@ public class UserDoctor extends AppCompatActivity implements AdapterDoctor.OnDoc
         Intent intent = new Intent(this, CreateReservations.class);
         intent.putExtra("doctor_id", listDoctor.get(position));
         startActivity(intent);
+        finish();
     }
 }
