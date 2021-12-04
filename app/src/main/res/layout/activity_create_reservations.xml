@@ -196,7 +196,7 @@
                 tools:ignore="HardcodedText" />
 
             <Button
-                android:id="@+id/btnSaveReservation2"
+                android:id="@+id/btnViewReservation"
                 android:layout_width="151dp"
                 android:layout_height="39dp"
                 android:layout_below="@+id/txtStatusPatient"

@@ -22,9 +22,13 @@
         android:theme="@style/Theme.Hospital_reservations"
         tools:ignore="AllowBackup">
         <activity
-            android:name=".user.CreateReservations"
+            android:name=".user.ViewReservations"
             android:exported="false"
             android:theme="@style/finalInfo"/>
+        <activity
+            android:name=".user.CreateReservations"
+            android:exported="false"
+            android:theme="@style/finalInfo" />
         <activity
             android:name=".user.UserDoctor"
             android:exported="false"

@@ -48,7 +48,7 @@ public class AdapterDoctor extends RecyclerView.Adapter<AdapterDoctor.DataViewHo
         return listDoctor.size();
     }
 
-    public class DataViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public static class DataViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView DoctorID,  DoctorName, HospitalNameDoctor, SpecialtyNameDoctor, DireccionDoctor, CostoDoctor, DiasHabilesDoctor, horaEntradaDoctor, horaSalidaDoctor;
         AdapterDoctor.OnDoctorListener onDoctorListener;
 

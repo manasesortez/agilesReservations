@@ -48,7 +48,7 @@ public class CreateReservations extends AppCompatActivity implements AdapterDoct
     ImageView backActivity;
     int t1Hora, t1Minute;
     EditText txtNamePatient, txtStatusPatient;
-    Button btnSaveReservation;
+    Button btnSaveReservation, btnViewReservation;
 
     RecyclerView recycleViewDoctorInfo;
     AdapterDoctorInfo adapterDoctorInfo;
@@ -69,6 +69,7 @@ public class CreateReservations extends AppCompatActivity implements AdapterDoct
     FirebaseAuth fAuth;
 
 
+    @SuppressLint("ShowToast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -91,6 +92,7 @@ public class CreateReservations extends AppCompatActivity implements AdapterDoct
         txtNamePatient = findViewById(R.id.txtNamePacient);
         txtStatusPatient = findViewById(R.id.txtStatusPatient);
 
+        btnViewReservation = findViewById(R.id.btnViewReservation);
         btnSaveReservation = findViewById(R.id.btnSaveReservation);
         tv_horaConsulta.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -148,6 +150,13 @@ public class CreateReservations extends AppCompatActivity implements AdapterDoct
                     txtStatusPatient.getText().clear();
 
                 }
+            }
+        });
+
+        btnViewReservation.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                ViewReservations();
             }
         });
         showDataDoctorInfo();
@@ -218,6 +227,11 @@ public class CreateReservations extends AppCompatActivity implements AdapterDoct
         }
     }
 
+    public void ViewReservations(){
+        startActivity(new Intent(getApplicationContext(), ViewReservations.class));
+        finish();
+    }
+
 
     private void AfterActivity() {
         startActivity(new Intent(getApplicationContext(), UserMain.class));
@@ -226,6 +240,7 @@ public class CreateReservations extends AppCompatActivity implements AdapterDoct
 
     @Override
     public void onDoctorInfoClick(int position) {
-
+        Intent intent = new Intent(this, ViewReservations.class);
+        intent.putExtra("doctor_id_info", listDoctorInfo.get(position));
     }
 }
