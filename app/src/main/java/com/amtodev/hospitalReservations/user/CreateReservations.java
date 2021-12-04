@@ -206,8 +206,6 @@ public class CreateReservations extends AppCompatActivity implements AdapterDoct
                 fAuth = FirebaseAuth.getInstance();
                 String UserId = fAuth.getCurrentUser().getUid();
 
-                Toast.makeText(CreateReservations.this, "Uid: " + UserId, Toast.LENGTH_LONG).show();
-
                 SQLiteDatabase miBaseDatos = objConexion.getWritableDatabase();
                 values = new ContentValues();
 
@@ -221,7 +219,6 @@ public class CreateReservations extends AppCompatActivity implements AdapterDoct
 
                 miBaseDatos.insert("reservas", null, values);
                 miBaseDatos.close();
-                Toast.makeText(CreateReservations.this, "Reservation Created Successfully", Toast.LENGTH_LONG).show();
             }catch(Exception error){
                 Toast.makeText(CreateReservations.this, "Error: " + error.getMessage(), Toast.LENGTH_SHORT).show();
             }
