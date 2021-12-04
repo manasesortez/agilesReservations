@@ -60,7 +60,6 @@ public class UserSpecialty extends AppCompatActivity implements AdapterSpecialty
         SearchSpecialty.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Toast.makeText(UserSpecialty.this, "Search Item Specialty", Toast.LENGTH_LONG).show();
             }
         });
 

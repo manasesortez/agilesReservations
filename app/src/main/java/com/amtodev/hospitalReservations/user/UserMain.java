@@ -63,7 +63,6 @@ public class UserMain extends AppCompatActivity implements AdapterHospital.OnHos
         SearchHospital.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Toast.makeText(UserMain.this, "Search Item", Toast.LENGTH_LONG).show();
             }
         });
         progressDialog = new ProgressDialog(UserMain.this);

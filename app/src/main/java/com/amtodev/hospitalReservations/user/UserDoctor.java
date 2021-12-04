@@ -62,7 +62,6 @@ public class UserDoctor extends AppCompatActivity implements AdapterDoctor.OnDoc
         SearchDoctor.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Toast.makeText(UserDoctor.this, "Search Item Doctor", Toast.LENGTH_LONG).show();
             }
         });
 
